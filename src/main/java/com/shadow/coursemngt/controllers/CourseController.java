@@ -3,7 +3,7 @@ package com.shadow.coursemngt.controllers;
 import com.shadow.coursemngt.entities.Course;
 import com.shadow.coursemngt.services.CourseService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -13,16 +13,16 @@ import java.util.List;
 public class CourseController {
     @Autowired
     CourseService courseService;
+    @GetMapping("/courses")
+    public String getAllCourses(Model model)
+    {
+        model.addAttribute("courses", courseService.getCourse());
+        return "courseview";
+    }
     @GetMapping
     public String hello()
     {
         return "Welcome to the spring boot project";
-    }
-
-    @GetMapping("/courses")
-    public List<Course> getAllCourses()
-    {
-        return courseService.getCourse();
     }
 
     @PostMapping("/")

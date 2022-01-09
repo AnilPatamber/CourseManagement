@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" >
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+  <div class="row">
+    <h1>List of Courses</h1>
+  </div>
+  <table class="table table-stripped table-bordered">
+    <thead class="table-dak">
+    <tr>
+      <th>Course ID</th>
+      <th>Course Name</th>
+      <th>Course Desc:</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each = "course: ${courses}">
+      <td th:text = "$(courses.id)"></td>
+      <td th:text = "$(courses.name)"></td>
+      <td th:text = "$(courses.description)"></td>
+    </tr>
+    </tbody>
+
+  </table>
+</div>
+
+</body>
+</html><!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" >
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+  <div class="row">
+    <h1>List of Courses</h1>
+  </div>
+  <table class="table table-stripped table-bordered">
+    <thead class="table-dak">
+    <tr>
+      <th>Course ID</th>
+      <th>Course Name</th>
+      <th>Course Desc:</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each = "course: ${courses}">
+      <td th:text = "$(course.id)"></td>
+      <td th:text = "$(course.name)"></td>
+      <td th:text = "$(course.description)"></td>
+    </tr>
+    </tbody>
+
+  </table>
+</div>
+
+</body>
+</html>
